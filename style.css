@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to bottom, #fefcea, #f1da36);
+  background: linear-gradient(to bottom right, #fff0f6, #f8d8ff);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,23 +10,26 @@ body {
 }
 
 .container {
-  background: #fff;
+  background: white;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   text-align: center;
   width: 90%;
-  max-width: 400px;
+  max-width: 420px;
+  border: 2px solid #d17bff;
 }
 
 h1 {
-  color: #e91e63;
-  font-size: 1.8rem;
+  color: #a200c5;
+  font-size: 1.9rem;
+  margin-bottom: 1rem;
 }
 
 p {
   margin: 1rem 0;
   font-size: 1.2rem;
+  color: #444;
 }
 
 .prizes {
@@ -39,26 +42,29 @@ p {
 .prizes img {
   width: 100px;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 1px solid #d17bff;
 }
 
 button {
-  background: #e91e63;
+  background: linear-gradient(to right, #d17bff, #ff66cc);
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 0.9rem 1.8rem;
   border: none;
   border-radius: 30px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(209, 123, 255, 0.4);
 }
 
 button:hover {
-  background: #d81b60;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(209, 123, 255, 0.6);
 }
 
 .note {
   font-size: 0.9rem;
-  color: #555;
+  color: #777;
   margin-top: 1rem;
-}
+  }
